@@ -363,6 +363,10 @@ body.light-mode .contact {
   color: green;
 }
 
+.contact-info a .fa-linkedin, .contact-info a .fa-linkedin:hover {
+  color: #004979;
+}
+
 body.light-mode .contact-info a .fa-envelope {
   color: #000;
 }
