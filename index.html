@@ -1,236 +1,370 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <!-- Essential Meta Tags -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Mahmoud Alfayoumi - Computer Engineer & IT Specialist Portfolio. Showcasing education, work experience, projects, skills, and certifications." />
-  <meta name="keywords" content="Mahmoud Alfayoumi, Computer Engineer, IT Maintenance, Web Developer, Portfolio" />
-  <meta name="author" content="Mahmoud Alfayoumi" />
+    <!-- Essential Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Mahmoud Alfayoumi - Computer Engineer & IT Specialist Portfolio. Showcasing education, work experience, projects, skills, and certifications." />
+    <meta name="keywords" content="Mahmoud Alfayoumi, Computer Engineer, IT Maintenance, Web Developer, Portfolio" />
+    <meta name="author" content="Mahmoud Alfayoumi" />
 
-  <!-- Open Graph / Social Media Meta Tags -->
-  <meta property="og:title" content="Mahmoud Alfayoumi - Portfolio" />
-  <meta property="og:description" content="Computer Engineer | IT Maintenance | Web & Software Developer" />
-  <meta property="og:image" content="assets/preview.webp" />
-  <meta property="og:url" content="https://your-domain.com" />
-  <meta property="og:type" content="website" />
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Mahmoud Alfayoumi - Portfolio" />
+    <meta property="og:description" content="Computer Engineer | IT Maintenance | Web & Software Developer" />
+    <meta property="og:image" content="assets/preview.webp" /> <!-- Not Added -->
+    <meta property="og:url" content="https://mahmoud-faiyumi.github.io/Portfolio/" />
+    <meta property="og:type" content="website" />
 
-  <!-- Favicon -->
-  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+    <!-- Favicon -->
+    <link rel="icon" href="assets/favicon.ico" type="image/icon" />
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style/style.css" />
-  <link rel="stylesheet" href="style/all.min.css" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="style/theme-toggle.css" />
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/header.css" />
+    <link rel="stylesheet" href="style/all.min.css" />
 
-  <!-- Page Title -->
-  <title>Mahmoud Alfayoumi - Portfolio</title>
+    <!-- Page Title -->
+    <title>Mahmoud Alfayoumi - Portfolio</title>
 </head>
+
 <body>
-  <!-- Loading Overlay -->
-  <div id="loading" aria-label="Loading" role="alert">
-    <div class="spinner"></div>
-  </div>
-
-  <!-- Navigation Bar -->
-  <header class="header" role="banner">
-    <nav class="navbar container" role="navigation" aria-label="Main Navigation">
-      <div class="logo">
-        <a href="#hero">Mahmoud <span>Alfayoumi</span></a>
-      </div>
-      <!-- Hamburger menu for mobile -->
-      <button id="menu-toggle" aria-label="Toggle Navigation" aria-expanded="false" class="menu-toggle">
-        <!-- The icon is built from three spans -->
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#certifications">Certifications</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li>
-          <button id="theme-toggle" aria-label="Toggle Dark/Light Mode">🌙</button>
-        </li>
-      </ul>
-    </nav>
-  </header>  
-
-  <!-- Hero Section -->
-  <section class="hero" id="hero" aria-label="Hero">
-    <div class="hero-content container">
-      <h1 class="hero-title">
-        Hi, I'm <span class="highlight">Mahmoud Alfayoumi</span>
-      </h1>
-      <p class="hero-subtitle">
-        Computer Engineer | IT Maintenance | Web & Software Developer
-      </p>
-      <div class="hero-buttons">
-        <a href="#projects" class="btn btn-primary">View My Work</a>
-        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-      </div>
+    <!-- Loading Overlay -->
+    <div id="loading" aria-label="Loading" role="alert">
+        <div class="spinner"></div>
     </div>
-  </section>  
 
-  <!-- About Section -->
-  <section id="about" class="section about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>
-        I am a Computer Engineering student with a diploma in Communications and Computer Networks. With practical experience in IT maintenance, technical support, and content creation, I specialize in developing robust applications and maintaining IT infrastructure. My passion for technology drives me to continuously improve and take on new challenges.
-      </p>
-    </div>
-  </section>
+    <!-- Navigation Bar -->
+    <header class="header" role="banner">
+        <nav class="navbar container" role="navigation" aria-label="Main Navigation">
+            <div class="logo">
+                <a href="#hero">Mahmoud <span>Alfayoumi</span></a>
+            </div>
 
-  <!-- Education Section -->
-  <section id="education" class="section education">
-    <div class="container">
-      <h2>Education</h2>
-      <ul class="timeline">
-        <li>
-          <h3>Bachelor of Computer Engineering</h3>
-          <span>BAU, Faculty of Engineering Technology (FET) | 2020 - 2024</span>
-          <p>GPA: 2.54 (Good)</p>
-        </li>
-        <li>
-          <h3>Diploma in Communications and Computer Networks</h3>
-          <span>BAU, Faculty of Engineering Technology (FET) | 2017 - 2020</span>
-          <p>Graduated with honors (84.9% - Very Good)</p>
-        </li>
-      </ul>
-    </div>
-  </section>
+            <!-- Theme Toggle Button -->
+            <input id="toggle" class="toggle" type="checkbox">
 
-  <!-- Experience Section -->
-  <section id="experience" class="section experience">
-    <div class="container">
-      <h2>Work Experience</h2>
-      <ul class="timeline">
-        <li>
-          <h3>IT Maintenance Technician (Volunteer)</h3>
-          <span>2018 - Present</span>
-          <p>Maintained software and hardware for laptops/desktops and provided technical support for college students.</p>
-        </li>
-        <li>
-          <h3>IT Maintenance Technician - Dawn Technology Company</h3>
-          <span>2015 - 2016</span>
-          <p>Collaborated within a team to maintain IT infrastructure and supported daily operations.</p>
-        </li>
-        <li>
-          <h3>Technical Content Writer (Freelance)</h3>
-          <span>2014 - 2016</span>
-          <p>Researched and wrote technical articles for an international audience via Facebook.</p>
-        </li>
-      </ul>
-    </div>
-  </section>
+            <nav class="nav-container">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
 
-  <!-- Projects Section -->
-  <section id="projects" class="section projects">
-    <div class="container">
-      <h2>Projects</h2>
-      <div class="project-grid">
-        <article class="project-card">
-          <!-- Project Image with lazy loading -->
-          <div class="project-image">
-            <img src="assets/HealthMate.png" alt="Health Mate application screenshot" loading="lazy" />
-          </div>
-          <div class="project-info">
-            <h3>Health Mate</h3>
-            <p>
-              A C# WinForms-based health tracking application featuring calorie monitoring, workout management, multi-account support, and secure password reset.
+            <!-- Backdrop Overlay for Mobile Menu -->
+            <div id="menu-overlay" class="menu-overlay"></div>
+
+            <!-- Hamburger Menu for Mobile -->
+            <button id="menu-toggle" aria-label="Toggle Navigation" aria-expanded="false" class="menu-toggle">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero" aria-label="Hero">
+        <div class="hero-content container">
+            <h1 class="hero-title">
+                Hi, I'm <span class="highlight">Mahmoud Alfayoumi</span>
+            </h1>
+            <p class="hero-subtitle">
+                Computer Engineer | IT Maintenance | Web & Software Developer
             </p>
-            <a href="https://github.com/mahmoud-faiyumi/HealthMate.git" target="_blank" rel="noopener" class="btn">View on GitHub</a>
-          </div>
-        </article>
-        <article class="project-card">
-          <div class="project-image">
-            <img src="assets/mt-library.png" alt="MT Library web interface preview" loading="lazy" />
-          </div>
-          <div class="project-info">
-            <h3>MT Library</h3>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2>About Me</h2>
             <p>
-              A responsive, web-based library management system designed to provide users with seamless access to library resources.
+                I am a dedicated Computer Engineering with a diploma in Communications and Computer Networks.
+                With hands-on experience in IT maintenance, technical support, and content creation, I specialize in
+                developing efficient applications and maintaining IT infrastructure. My passion for technology
+                drives me to continuously learn, adapt, and take on new challenges in the ever-evolving tech industry.
             </p>
-            <a href="https://mt-library.web.app/" target="_blank" rel="noopener" class="btn">Visit Website</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Skills Section -->
-  <section id="skills" class="section skills">
-    <div class="container">
-      <h2>Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-item">
-          <i class="fas fa-code skill-icon" aria-hidden="true"></i>
-          <h4>Programming</h4>
-          <p>C#, .NET, HTML, CSS</p>
         </div>
-        <div class="skill-item">
-          <i class="fas fa-database skill-icon" aria-hidden="true"></i>
-          <h4>Databases</h4>
-          <p>MSSQL, SSMS</p>
-        </div>
-        <div class="skill-item">
-          <i class="fas fa-tools skill-icon" aria-hidden="true"></i>
-          <h4>Tools</h4>
-          <p>Microsoft Office, Git &amp; GitHub</p>
-        </div>
-        <div class="skill-item">
-          <i class="fas fa-network-wired skill-icon" aria-hidden="true"></i>
-          <h4>Networking</h4>
-          <p>Infrastructure maintenance, troubleshooting</p>
-        </div>
-        <div class="skill-item">
-          <i class="fas fa-paint-brush skill-icon" aria-hidden="true"></i>
-          <h4>Design</h4>
-          <p>Adobe Illustrator, Canva</p>
-        </div>
-      </div>
-    </div>
-  </section>  
-  
-  <!-- Certifications Section -->
-  <section id="certifications" class="section certifications">
-    <div class="container">
-      <h2>Certifications</h2>
-      <ul class="certifications-list">
-        <li>A+ Certification (2016)</li>
-        <li>ICDL (International Computer Driving License) - 2020 (Edraak)</li>
-        <li>Security+ Certification - 2022 (Pioneers Academy)</li>
-      </ul>
-    </div>
-  </section>  
+    </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="section contact">
-    <div class="container">
-      <h2>Contact Me</h2>
-      <div class="contact-info">
-        <p>Email: <a href="mailto:mahmoud.faiyumi98@outlook.com">mahmoud.faiyumi98@outlook.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/mahmoud-faiyumi/" target="_blank" rel="noopener">linkedin.com/in/mahmoud-faiyumi</a></p>
-        <p>WhatsApp: <a href="https://wa.me/962785359627" target="_blank" rel="noopener">Chat on WhatsApp</a></p>
-      </div>
-    </div>
-  </section>
+    <!-- Education Section -->
+    <section id="education" class="section education">
+        <div class="container">
+            <h2>Education</h2>
+            <ul class="timeline">
+                <li>
+                    <h3>Bachelor of Computer Engineering</h3>
+                    <span class="sp">BAU, Faculty of Engineering Technology (FET) | 2020 - 2024</span>
+                    <p>GPA: 2.54 (Good)</p>
+                </li>
+                <li>
+                    <h3>Diploma in Communications and Computer Networks Engineering</h3>
+                    <span class="sp">BAU, Faculty of Engineering Technology (FET) | 2017 - 2020</span>
+                    <p>Graduated with honors (84.9% - Very Good)</p>
+                </li>
+            </ul>
+        </div>
+    </section>
 
-  <!-- Footer -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <p>© 2025 Mahmoud Alfayoumi. All Rights Reserved.</p>
-    </div>
-  </footer>
+    <!-- Experience Section -->
+    <section id="experience" class="section experience">
+        <div class="container">
+            <h2>Work Experience</h2>
+            <ul class="timeline">
+                <li>
+                    <h3>IT Maintenance Technician (Volunteer)</h3>
+                    <span class="sp">2018 - Present</span>
+                    <p>Maintained software and hardware for laptops/desktops and provided technical support for college
+                        students.</p>
+                </li>
+                <li>
+                    <h3>IT Maintenance Technician - Dawn Technology Company</h3>
+                    <span class="sp"> 2015 - 2016</span>
+                    <p>Collaborated within a team to maintain IT infrastructure and supported daily operations.</p>
+                </li>
+                <li>
+                    <h3>Technical Content Writer (Freelance)</h3>
+                    <span class="sp">2014 - 2016</span>
+                    <p>Researched and wrote technical articles for an international audience via Facebook.</p>
+                </li>
+            </ul>
+        </div>
+    </section>
 
-  <!-- JavaScript -->
-  <script src="script.js"></script>
+    <!-- Training Section -->
+    <section id="experience" class="section experience">
+        <div class="container">
+            <h2>Training Experience</h2>
+            <ul class="timeline">
+                <li>
+                    <h3>Networking Engineer</h3>
+                    <span class="sp">Jordanian Customs | 2019 - 2020</span>
+                    <p>Designed, optimized, and secured network infrastructure. Troubleshot and monitored network
+                        systems to ensure efficient operations. Maintained compliance, effective communication, and
+                        detailed documentation.</p>
+                </li>
+                <li>
+                    <h3>Full-Stack</h3>
+                    <span class="sp">Clever Mind POB | 2024 - Present</span>
+                    <p>The training was designed to equip participants with the knowledge and skills necessary to create
+                        robust, scalable, and user-friendly web applications. The curriculum covered essential Front-End
+                        technologies such as HTML, CSS, JavaScript, and UI/UX design principles, as well as Back-End
+                        technologies including PHP and database management. Emphasizing hands-on experience, the program
+                        also incorporated collaborative tools, real-world projects, and case studies to bridge
+                        theoretical knowledge with practical application.</p>
+                </li>
+                <li>
+                    <h3>Front-End</h3>
+                    <span class="sp">Digiskills &amp; IIH | 2025 - Present</span>
+                    <p>The training was structured to provide participants with the expertise needed to develop dynamic,
+                        responsive, and high-performance web applications using Angular. The curriculum covered
+                        fundamental Front-End technologies such as Javascript, TypeScript, HTML, SASS, and CSS, along
+                        with core Angular concepts including components, services, routing, and state management.
+                        Additionally, the program introduced best practices for modular development, API integration,
+                        and performance optimization. With a strong emphasis on hands-on learning, the training
+                        incorporated real-world projects, collaborative tools, and case studies to ensure a seamless
+                        transition from theory to practical application.</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <article class="project-card">
+                    <!-- Project Image with lazy loading -->
+                    <div class="project-image">
+                        <img src="assets/HealthMate.png" alt="Health Mate application screenshot" loading="lazy" />
+                    </div>
+                    <div class="project-info">
+                        <h3>Health Mate</h3>
+                        <p>
+                            This comprehensive C# WinForms-based health tracking application offers a suite of advanced
+                            features designed to enhance user wellness management. It calculates users' age based on
+                            their date of birth, providing a personalized touch, while monitoring daily caloric intake
+                            and expenditure for effective calorie tracking. The system also integrates a dynamic workout
+                            management module, allowing users to create and manage training routines, alongside a
+                            dedicated couch and trainees system that organizes and tracks training sessions and
+                            progress. Moreover, it supports multiple user accounts securely, paired with a robust
+                            email-based password reset functionality to ensure account safety. Additional health
+                            calculations further empower users with valuable insights, and the implementation of offline
+                            data storage significantly bolsters security and privacy.
+                        </p>
+                        <a href="https://github.com/mahmoud-faiyumi/HealthMate.git" target="_blank" rel="noopener"
+                            class="btn">View on GitHub</a>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="assets/mt-library.png" alt="MT Library web interface preview" loading="lazy" />
+                    </div>
+                    <div class="project-info">
+                        <h3>MT Library</h3>
+                        <p>
+                            This platform features an intuitive user interface for effortless searching and navigation,
+                            a responsive design that ensures seamless access across all devices, and advanced filtering
+                            capabilities to quickly locate resources by name or category. Additionally, the system
+                            introduces a new feedback feature powered by EmailJS, enabling users to share suggestions,
+                            complaints, and comments directly with library administrators in a smooth and efficient
+                            manner.
+                        </p>
+                        <a href="https://mt-library.web.app/" target="_blank" rel="noopener" class="btn">Visit
+                            Website</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills">
+        <div class="container">
+            <h2>Technical skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="fas fa-code skill-icon" aria-hidden="true"></i>
+                    <h4>Programming</h4>
+                    <p>C#, .NET, HTML, CSS, JS, TS, Angular</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-database skill-icon" aria-hidden="true"></i>
+                    <h4>Databases</h4>
+                    <p>MSSQL, SSMS</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-tools skill-icon" aria-hidden="true"></i>
+                    <h4>Tools</h4>
+                    <p>Microsoft Office, Git &amp; GitHub</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-network-wired skill-icon" aria-hidden="true"></i>
+                    <h4>Networking</h4>
+                    <p>Infrastructure maintenance, troubleshooting</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-paint-brush skill-icon" aria-hidden="true"></i>
+                    <h4>Design</h4>
+                    <p>Adobe Illustrator, Canva</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 style="margin-top: 2rem;">Soft skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="fas fa-users skill-icon" aria-hidden="true"></i>
+                    <h4>Teamwork</h4>
+                    <p>Collaborative and supportive</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-comments skill-icon" aria-hidden="true"></i>
+                    <h4>Communication</h4>
+                    <p>Clear, concise, and effective</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-lightbulb skill-icon" aria-hidden="true"></i>
+                    <h4>Problem Solving</h4>
+                    <p>Analytical and innovative thinker</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-chart-line skill-icon" aria-hidden="true"></i>
+                    <h4>Adaptability</h4>
+                    <p>Quick learner and flexible</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-handshake skill-icon" aria-hidden="true"></i>
+                    <h4>Leadership</h4>
+                    <p>Mentoring and team-building abilities</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Volunteer Work Section -->
+    <section id="skills" class="section skills">
+        <div class="container">
+            <h2>Volunteer Work</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <img src="assets/ZerOne.png" alt="ZerOne" class="skill-icon" style="width: 150px;"></img>
+                    <h4>ZerOne</h4>
+                </div>
+                <div class="skill-item">
+                    <img src="assets/mt-team.png" alt="mt-team" class="skill-icon"></img>
+                    <h4>Maintenance Team</h4>
+                </div>
+                <div class="skill-item">
+                    <img src="assets/ieee.png" alt="ieee" class="skill-icon" style="width: 160px;"></img>
+                    <h4>IEEE</h4>
+                </div>
+                <div class="skill-item">
+                    <img src="assets/shaghaf.png" alt="Shaghaf Family" class="skill-icon"></img>
+                    <h4>Shaghaf Family</h4>
+                </div>
+                <div class="skill-item">
+                    <img src="assets/Mujaddidun.png" alt="Mujaddidun" class="skill-icon"></img>
+                    <h4>Mujaddidun Jo</h4>
+                </div>
+                <div class="skill-item">
+                    <img src="assets/nahno.png" alt="nahno" class="skill-icon"></img>
+                    <h4>Nahno</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="section certifications">
+        <div class="container">
+            <h2>Certifications</h2>
+            <ul class="certifications-list">
+                <li>A+ Certification (2016)</li>
+                <li>ICDL (International Computer Driving License) - 2020 (Edraak)</li>
+                <li>Security+ Certification - 2022 (Pioneers Academy)</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <div class="contact-info">
+                <a href="mailto:mahmoud.faiyumi98@outlook.com"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/mahmoud-faiyumi/" target="_blank" rel="noopener"><i
+                        class="fa-brands fa-linkedin"></i></a>
+                <a href="https://wa.me/962785359627" target="_blank" rel="noopener"><i
+                        class="fa-brands fa-square-whatsapp"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <p>© 2025 Mahmoud Alfayoumi. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
