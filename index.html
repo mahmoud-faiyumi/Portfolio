@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-    <!-- Essential Meta Tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
@@ -10,43 +9,35 @@
     <meta name="keywords" content="Mahmoud Alfayoumi, Computer Engineer, IT Maintenance, Web Developer, Portfolio" />
     <meta name="author" content="Mahmoud Alfayoumi" />
 
-    <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="Mahmoud Alfayoumi - Portfolio" />
     <meta property="og:description" content="Computer Engineer | IT Maintenance | Web & Software Developer" />
     <meta property="og:image" content="assets/preview.webp" /> <!-- Not Added -->
     <meta property="og:url" content="https://mahmoud-faiyumi.github.io/Portfolio/" />
     <meta property="og:type" content="website" />
 
-    <!-- Favicon -->
     <link rel="icon" href="assets/favicon.ico" type="image/icon" />
 
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
 
-    <!-- CSS -->
     <link rel="stylesheet" href="style/theme-toggle.css" />
     <link rel="stylesheet" href="style/style.css" />
     <link rel="stylesheet" href="style/header.css" />
     <link rel="stylesheet" href="style/all.min.css" />
 
-    <!-- Page Title -->
     <title>Mahmoud Alfayoumi - Portfolio</title>
 </head>
 
 <body>
-    <!-- Loading Overlay -->
     <div id="loading" aria-label="Loading" role="alert">
         <div class="spinner"></div>
     </div>
 
-    <!-- Navigation Bar -->
     <header class="header" role="banner">
         <nav class="navbar container" role="navigation" aria-label="Main Navigation">
             <div class="logo">
                 <a href="#hero">Mahmoud <span>Alfayoumi</span></a>
             </div>
 
-            <!-- Theme Toggle Button -->
             <input id="toggle" class="toggle" type="checkbox">
 
             <nav class="nav-container">
@@ -58,13 +49,12 @@
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#certifications">Certifications</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li><a href="#articles">Articles</a></li>
                 </ul>
             </nav>
 
-            <!-- Backdrop Overlay for Mobile Menu -->
             <div id="menu-overlay" class="menu-overlay"></div>
 
-            <!-- Hamburger Menu for Mobile -->
             <button id="menu-toggle" aria-label="Toggle Navigation" aria-expanded="false" class="menu-toggle">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
@@ -73,7 +63,6 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero" id="hero" aria-label="Hero">
         <div class="hero-content container">
             <h1 class="hero-title">
@@ -89,7 +78,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="section about">
         <div class="container">
             <h2>About Me</h2>
@@ -102,7 +90,6 @@
         </div>
     </section>
 
-    <!-- Education Section -->
     <section id="education" class="section education">
         <div class="container">
             <h2>Education</h2>
@@ -121,7 +108,6 @@
         </div>
     </section>
 
-    <!-- Experience Section -->
     <section id="experience" class="section experience">
         <div class="container">
             <h2>Work Experience</h2>
@@ -146,7 +132,6 @@
         </div>
     </section>
 
-    <!-- Training Section -->
     <section id="experience" class="section experience">
         <div class="container">
             <h2>Training Experience</h2>
@@ -184,57 +169,60 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects" class="section projects">
         <div class="container">
-            <h2>Projects</h2>
-            <div class="project-grid">
-                <article class="project-card">
-                    <!-- Project Image with lazy loading -->
-                    <div class="project-image">
-                        <img src="assets/HealthMate.png" alt="Health Mate application screenshot" loading="lazy" />
-                    </div>
-                    <div class="project-info">
-                        <h3>Health Mate</h3>
-                        <p>
-                            This comprehensive C# WinForms-based health tracking application offers a suite of advanced
-                            features designed to enhance user wellness management. It calculates users' age based on
-                            their date of birth, providing a personalized touch, while monitoring daily caloric intake
-                            and expenditure for effective calorie tracking. The system also integrates a dynamic workout
-                            management module, allowing users to create and manage training routines, alongside a
-                            dedicated couch and trainees system that organizes and tracks training sessions and
-                            progress. Moreover, it supports multiple user accounts securely, paired with a robust
-                            email-based password reset functionality to ensure account safety. Additional health
-                            calculations further empower users with valuable insights, and the implementation of offline
-                            data storage significantly bolsters security and privacy.
-                        </p>
-                        <a href="https://github.com/mahmoud-faiyumi/HealthMate.git" target="_blank" rel="noopener"
-                            class="btn">View on GitHub</a>
-                    </div>
-                </article>
-                <article class="project-card">
-                    <div class="project-image">
-                        <img src="assets/mt-library.png" alt="MT Library web interface preview" loading="lazy" />
-                    </div>
-                    <div class="project-info">
-                        <h3>MT Library</h3>
-                        <p>
-                            This platform features an intuitive user interface for effortless searching and navigation,
-                            a responsive design that ensures seamless access across all devices, and advanced filtering
-                            capabilities to quickly locate resources by name or category. Additionally, the system
-                            introduces a new feedback feature powered by EmailJS, enabling users to share suggestions,
-                            complaints, and comments directly with library administrators in a smooth and efficient
-                            manner.
-                        </p>
-                        <a href="https://mt-library.web.app/" target="_blank" rel="noopener" class="btn">Visit
-                            Website</a>
-                    </div>
-                </article>
-            </div>
+          <h2>Projects</h2>
+          <div class="project-grid">
+            <article class="project-card">
+              <span class="minimized-message">HealthMate - Click to Learn More</span>
+              <i class="toggle-icon"></i>
+              <div class="project-image">
+                <img src="assets/HealthMate.png" alt="Health Mate screenshot" />
+              </div>
+              <div class="project-info">
+                <h3>Health Mate</h3>
+                <p>
+                  A feature-rich C# WinForms health tracking application with calorie tracking,
+                  workout management, and secure user accounts.
+                </p>
+                <a href="https://github.com/mahmoud-faiyumi/HealthMate.git" target="_blank" rel="noopener" class="btn">View on GitHub</a>
+              </div>
+            </article>
+      
+            <article class="project-card">
+              <span class="minimized-message">MT Library - Click to Explore</span>
+              <i class="toggle-icon"></i>
+              <div class="project-image">
+                <img src="assets/mt-library.png" alt="MT Library interface preview" />
+              </div>
+              <div class="project-info">
+                <h3>MT Library</h3>
+                <p>
+                  A web platform with advanced filtering, search, and feedback capabilities powered by EmailJS.
+                </p>
+                <a href="https://mt-library.web.app/" target="_blank" rel="noopener" class="btn">Visit Website</a>
+              </div>
+            </article>
+      
+            <article class="project-card">
+              <span class="minimized-message">Angular First App - Discover More</span>
+              <i class="toggle-icon"></i>
+              <div class="project-image">
+                <img src="assets/ngfirstapp.png" alt="Angular First App screenshot" />
+              </div>
+              <div class="project-info">
+                <h3>Angular First App</h3>
+                <p>
+                  A dynamic Angular web app showcasing modern UI components and best practices.
+                </p>
+                <a href="https://ngfirstapp-24fdc.web.app/" target="_blank" rel="noopener" class="btn">Visit Website</a>
+              </div>
+            </article>
+          </div>
         </div>
-    </section>
+      </section>
+      
 
-    <!-- Skills Section -->
     <section id="skills" class="section skills">
         <div class="container">
             <h2>Technical skills</h2>
@@ -299,7 +287,6 @@
         </div>
     </section>
 
-    <!-- Volunteer Work Section -->
     <section id="skills" class="section skills">
         <div class="container">
             <h2>Volunteer Work</h2>
@@ -332,7 +319,6 @@
         </div>
     </section>
 
-    <!-- Certifications Section -->
     <section id="certifications" class="section certifications">
         <div class="container">
             <h2>Certifications</h2>
@@ -344,7 +330,28 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <section id="articles" class="section articles">
+        <div class="container">
+            <h2>Articles</h2>
+            <div class="articles-grid">
+                <article class="article-item">
+                    <i class="fas fa-box-open article-icon"></i>
+                    <h4>NPM vs Yarn on Angular</h4>
+                    <p>Explore the differences between NPM and Yarn when managing dependencies in Angular projects.</p>
+                    <a href="articles/for vs forEach vs for...in in JavaScript.pdf" target="_blank" class="btn">Read More</a>
+                </article>
+
+                <article class="article-item">
+                    <i class="fas fa-sync-alt article-icon"></i>
+                    <h4>for vs forEach vs for...in in JavaScript</h4>
+                    <p>Understand when to use for, forEach, and for...in loops in JavaScript and their key differences.
+                    </p>
+                    <a href="NPM vs Yarn on Angular.pdf" target="_blank" class="btn">Read More</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
     <section id="contact" class="section contact">
         <div class="container">
             <h2>Contact Me</h2>
