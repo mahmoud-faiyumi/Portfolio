@@ -29,7 +29,6 @@ body.light-mode .header.scrolled {
     width:100vw;
 }
 
-/* Logo */
 .logo a {
     text-decoration: none;
     font-size: 1.8rem;
@@ -46,7 +45,6 @@ body.light-mode .logo a {
     color: var(--primary-color);
 }
 
-/* Hamburger Menu Button */
 .menu-toggle {
     background: none;
     border: none;
@@ -71,7 +69,6 @@ body.light-mode .logo a {
     left: 0;
 }
 
-/* Positioning the three lines */
 .hamburger-line:nth-child(1) {
     top: 10px;
 }
@@ -84,7 +81,6 @@ body.light-mode .logo a {
     top: 26px;
 }
 
-/* Hamburger open state */
 .menu-toggle.open .hamburger-line:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
 }
@@ -97,7 +93,6 @@ body.light-mode .logo a {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-/* Navigation Links */
 .nav-links {
     list-style: none;
     display: flex;
@@ -115,12 +110,10 @@ body.light-mode .logo a {
     z-index: 1250;
 }
 
-/* When the nav is open, slide it in */
 .nav-links.open {
     transform: translateX(0);
 }
 
-/* Staggered fade-in for nav items */
 .nav-links li {
     opacity: 0;
     transform: translateX(20px);
@@ -132,7 +125,6 @@ body.light-mode .logo a {
     transform: translateX(0);
 }
 
-/* Optional: Stagger animation delays if you have several items */
 .nav-links li:nth-child(1) {
     animation-delay: 0.1s;
 }
@@ -168,11 +160,11 @@ body.light-mode .logo a {
     }
 }
 
-/* Navigation Link Styles */
 .nav-links li a {
     text-decoration: none;
     color: inherit;
     font-weight: 500;
+    width: 100%;
     padding: 0.5rem 0.8rem;
     border-radius: 4px;
     transition: background var(--transition-speed) var(--ease-out),
@@ -180,6 +172,7 @@ body.light-mode .logo a {
     position: relative;
     overflow: hidden;
     display: inline-block;
+    color: white;
 }
 
 .nav-links li a:hover,
@@ -188,7 +181,6 @@ body.light-mode .logo a {
     color: var(--primary-color);
 }
 
-/* Ripple effect */
 .nav-links li a::after {
     content: "";
     position: absolute;
@@ -223,7 +215,6 @@ body.light-mode .logo a {
     }
 }
 
-/* Backdrop overlay for the nav menu */
 .menu-overlay {
     position: fixed;
     top: 70px;
@@ -242,7 +233,6 @@ body.light-mode .logo a {
     visibility: visible;
 }
 
-/* Extra Small Devices Adjustments */
 @media (max-width: 480px) {
     .navbar {
         height: 60px;
@@ -256,7 +246,6 @@ body.light-mode .logo a {
         font-size: 1.5rem;
     }
 
-    /* Adjust theme toggle and hamburger sizes */
     #theme-toggle,
     .menu-toggle {
         width: 35px;
@@ -279,7 +268,6 @@ body.light-mode .logo a {
         top: 24px;
     }
 
-    /* Adjust mobile nav width */
     .nav-links {
         width: 200px;
         padding: 0.75rem 0;
