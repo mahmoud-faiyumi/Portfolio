@@ -1,4 +1,4 @@
-// Theme toggle: supports legacy checkbox (#toggle) and new button (#theme-toggle)
+
 const legacyToggle = document.getElementById("toggle");
 const themeButton = null;
 
@@ -7,7 +7,7 @@ function applyTheme(isLight) {
   try { localStorage.setItem('lightMode', !!isLight); } catch (e) {}
 }
 
-// initialize from storage
+
 try {
   const saved = localStorage.getItem('lightMode');
   if (saved !== null) applyTheme(saved === 'true');
@@ -19,7 +19,7 @@ if (legacyToggle) {
   });
 }
 
-// theme toggle removed
+
 
 const menuToggle = document.getElementById('menu-toggle');
 const navLinks = document.getElementById('nav-links');
@@ -32,7 +32,7 @@ function setMenuOpen(open) {
   if (navContainer) navContainer.classList.toggle('open', open);
   menuToggle.classList.toggle('open', open);
   menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-  // overlay removed
+  
   try { document.body.classList.toggle('menu-open', open); } catch (e) {}
 }
 
@@ -44,9 +44,9 @@ if (menuToggle) {
   });
 }
 
-// overlay removed
 
-// Close menu when clicking outside nav / toggle
+
+
 document.addEventListener('click', (event) => {
   try {
     const isOpen = (navLinks && navLinks.classList.contains('open')) || (navContainer && navContainer.classList.contains('open'));
@@ -55,7 +55,7 @@ document.addEventListener('click', (event) => {
     if (menuToggle && menuToggle.contains(target)) return;
     if (navContainer && navContainer.contains(target)) return;
     setMenuOpen(false);
-  } catch (err) { /* ignore */ }
+  } catch (err) {  }
 });
 
 const sections = document.querySelectorAll(".section");
@@ -82,7 +82,7 @@ navItems.forEach(link => {
       navLinks.classList.remove("open");
       menuToggle.setAttribute("aria-expanded", false);
       menuToggle.classList.remove("open");
-      // overlay removed
+      
       try { document.body.classList.remove('menu-open'); } catch (err) {}
     }
 
@@ -113,7 +113,7 @@ if (viewMyWorkBtn) {
   });
 }
 
-// Create floating particles for hero section
+
 function createParticles() {
   const heroParticles = document.querySelector('.hero-particles');
   if (!heroParticles) return;
@@ -128,7 +128,7 @@ function createParticles() {
   }
 }
 
-// Terminal typing effect for hero title
+
 function typeWriter(element, text, speed = 100) {
   let i = 0;
   element.innerHTML = '';
@@ -144,7 +144,7 @@ function typeWriter(element, text, speed = 100) {
   type();
 }
 
-// Add scroll effect to header
+
 function handleHeaderScroll() {
   const header = document.querySelector('.header');
   if (!header) return;
@@ -158,7 +158,7 @@ function handleHeaderScroll() {
   });
 }
 
-// Enhanced loading screen with terminal effects
+
 window.addEventListener("load", () => {
   const loadingOverlay = document.getElementById("loading");
   const loadingText = document.querySelector('.loading-text');
@@ -183,40 +183,40 @@ window.addEventListener("load", () => {
   }
 
   if (loadingOverlay) {
-    // fade out then remove to ensure it doesn't block interaction
+    
     setTimeout(() => {
-      // make non-interactive immediately
+      
       try { loadingOverlay.style.pointerEvents = 'none'; } catch (err) {}
       loadingOverlay.classList.add("hidden");
 
-      // remove after transitionend, or fallback after 900ms
+      
       let removed = false;
       const onEnd = (e) => {
         if (e.target === loadingOverlay && !removed) {
           removed = true;
-          try { loadingOverlay.remove(); } catch (err) { /* ignore */ }
+          try { loadingOverlay.remove(); } catch (err) {  }
           loadingOverlay.removeEventListener('transitionend', onEnd);
         }
       };
       loadingOverlay.addEventListener('transitionend', onEnd);
 
-      // Fallback: if transitionend doesn't fire, remove after timeout
+      
       setTimeout(() => {
         if (!removed) {
-          try { loadingOverlay.remove(); } catch (err) { /* ignore */ }
+          try { loadingOverlay.remove(); } catch (err) {  }
           removed = true;
         }
-      }, 900);
-    }, 4500); // longer delay for more time on loading screen
+      }, 1600);
+    }, 4500); 
   }
 });
 
-// Initialize all effects
+
 document.addEventListener("DOMContentLoaded", function () {
   createParticles();
   handleHeaderScroll();
   
-  // Add glitch effect to logo on hover
+  
   const logo = document.querySelector('.logo');
   if (logo) {
     logo.addEventListener('mouseenter', () => {
