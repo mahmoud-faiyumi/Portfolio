@@ -56,6 +56,7 @@ html {
   box-sizing: border-box;
   font-size: 16px;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 *,
@@ -1847,6 +1848,10 @@ body.light-mode {
   transition: opacity 1000ms var(--ease-smooth), transform 1000ms var(--ease-smooth), visibility 0s linear 1000ms;
   will-change: opacity, transform;
   font-family: 'JetBrains Mono', monospace;
+  text-align: center;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  max-width: 100vw;
+  max-height: 100vh;
 }
 
 .loading-text {
@@ -1869,6 +1874,26 @@ body.light-mode {
   border-radius: 50%;
   animation: spin 1s linear infinite;
   box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+}
+
+@supports (height: 100dvh) {
+  #loading {
+    width: 100dvw;
+    height: 100dvh;
+  }
+}
+
+@media (max-width: 480px) {
+  .loading-text {
+    font-size: 1rem;
+    padding: 0 1rem;
+    max-width: 90vw;
+    word-break: break-word;
+  }
+  #loading .spinner {
+    width: 48px;
+    height: 48px;
+  }
 }
 
 @keyframes spin {
