@@ -1141,7 +1141,7 @@ body.light-mode {
 
 .project-card h3::before {
   content: '> ';
-  color: var(--syntax-keyword);
+  color: var(--primary-color);
 }
 
 .project-card p {
