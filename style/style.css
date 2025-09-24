@@ -2038,7 +2038,6 @@ body.light-mode {
 
 @media (max-width: 480px) {
   .hero {
-    min-height: 80vh;
     padding: 2rem 0;
   }
 
