@@ -4,841 +4,238 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description"
-        content="Mahmoud Alfayoumi - Computer Engineer & IT Specialist Portfolio. Showcasing education, work experience, projects, skills, and certifications." />
-    <meta name="keywords" content="Mahmoud Alfayoumi, Computer Engineer, IT Maintenance, Web Developer, Portfolio" />
+    <meta name="description" id="meta-description"
+        content="Mahmoud Alfayoumi — Software Engineer specializing in Angular, micro-frontends, and full-stack development. Portfolio, projects, and technical articles." />
+    <meta name="keywords" id="meta-keywords"
+        content="Mahmoud Alfayoumi, Software Engineer, Angular, Micro-frontends, TypeScript, Computer Engineer, Web Developer, Portfolio" />
     <meta name="author" content="Mahmoud Alfayoumi" />
 
     <meta property="og:title" content="Mahmoud Alfayoumi - Portfolio" />
-    <meta property="og:description" content="Computer Engineer | IT Maintenance | Web & Software Developer" />
-    <meta property="og:image" content="assets/preview.webp" /> 
+    <meta property="og:description" id="og-description"
+        content="Software Engineer | Angular & Micro-frontends | Full-Stack Developer" />
+    <meta property="og:image" content="https://mahmoud-faiyumi.github.io/Portfolio/assets/preview.webp" />
     <meta property="og:url" content="https://mahmoud-faiyumi.github.io/Portfolio/" />
     <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Mahmoud Alfayoumi - Portfolio" />
+    <meta name="twitter:description"
+        content="Software Engineer | Angular & Micro-frontends | Full-Stack Developer" />
+    <meta name="twitter:image" content="https://mahmoud-faiyumi.github.io/Portfolio/assets/preview.webp" />
 
-    <link rel="icon" href="assets/favicon.ico" type="image/icon" />
+    <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://mahmoud-faiyumi.github.io/Portfolio/" />
 
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-
+    <link rel="stylesheet" href="fonts/fonts.css" />
     <link rel="stylesheet" href="style/style.css" />
     <link rel="stylesheet" href="style/all.min.css" />
 
     <title>Mahmoud Alfayoumi - Portfolio</title>
+
+    <script type="application/ld+json" id="json-ld">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mahmoud Alfayoumi",
+      "jobTitle": "Software Engineer",
+      "url": "https://mahmoud-faiyumi.github.io/Portfolio/",
+      "email": "mailto:mahmoud.faiyumi98@outlook.com",
+      "telephone": "+962782185255",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Amman",
+        "addressCountry": "JO"
+      },
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Al-Balqa Applied University — Faculty of Engineering Technology"
+        }
+      ],
+      "knowsAbout": [
+        "Angular",
+        "TypeScript",
+        "Micro-frontends",
+        "C#",
+        ".NET",
+        "SQL Server",
+        "JavaScript",
+        "Full-stack development"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/mahmoud-faiyumi/",
+        "https://github.com/mahmoud-faiyumi"
+      ]
+    }
+    </script>
 </head>
 
 <body>
-    <div id="loading" aria-label="Loading" role="alert">
+    <div id="loading" aria-label="Loading" role="status">
         <div class="loading-text">Initializing Portfolio</div>
         <div class="spinner"></div>
     </div>
 
-        <header class="header" role="banner">
-            <div class="container header-flex">
-                <a href="#hero" class="logo" aria-label="Go to homepage">
-                    <span class="logo-prompt">&gt;</span><span class="logo-main">Mahmoud</span> <span class="logo-accent">Alfayoumi</span>
-                </a>
+    <a href="#main" class="skip-link">Skip to content</a>
 
-                <nav class="nav" aria-label="Main Navigation">
-                    <ul class="nav-links" id="nav-links">
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#education">Education</a></li>
-                        <li><a href="#experience">Experience</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#skills">Skills</a></li>
-                        <li><a href="#certifications">Certifications</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="#articles">Articles</a></li>
-                    </ul>
-                </nav>
-                
-                <button id="menu-toggle" class="menu-toggle" aria-label="Open navigation menu" aria-controls="nav-links" aria-expanded="false">
-                    <span class="hamburger" aria-hidden="true">
-                        <span></span><span></span><span></span>
-                    </span>
-                </button>
-            </div>
-        </header>
+    <header class="header" role="banner">
+        <div class="container header-flex">
+            <a href="#hero" class="logo" aria-label="Go to homepage">
+                <span class="logo-prompt">&gt;</span><span class="logo-main">Mahmoud</span>
+                <span class="logo-accent">Alfayoumi</span>
+            </a>
 
-    <section class="hero" id="hero" aria-label="Hero">
-        <div class="hero-particles"></div>
-        <div class="hero-content container">
-            <h1 class="hero-title">
-                <span class="terminal-text">$ whoami</span><br>
-                <span class="highlight">Mahmoud Alfayoumi</span>
-            </h1>
-            <p class="hero-subtitle">Computer Engineer | IT Maintenance | Web & Software Developer</p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">
-                    <span class="code-font">./view_projects.sh</span>
-                </a>
-                <a href="#contact" class="btn btn-secondary">
-                    <span class="code-font">./contact.sh</span>
-                </a>
-                <a href="articles/Mahmoud_Alfayoumi_CV.pdf" class="btn btn-code" download aria-label="Download CV (PDF)">
-                    <span class="code-font">./download_cv.sh</span>
-                </a>
-            </div>
+            <nav class="nav" aria-label="Main Navigation">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#volunteer">Volunteer</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#articles">Articles</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <button id="menu-toggle" class="menu-toggle" aria-label="Open navigation menu"
+                aria-controls="nav-links" aria-expanded="false">
+                <span class="hamburger" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                </span>
+            </button>
         </div>
-    </section>
+    </header>
 
-    <section id="about" class="section about" aria-labelledby="about-heading">
-        <div class="container">
-            <h2 id="about-heading">About</h2>
-
-            <div class="about-grid">
-                <div>
-                    <p class="lead">I build reliable, maintainable applications and enjoy solving real-world problems across web and desktop platforms. I prioritize accessibility, performance, and developer ergonomics. My work focuses on pragmatic solutions that improve user experience and developer productivity.</p>
-
-                    <h3>Core strengths</h3>
-                    <ul class="list-tight">
-                        <li><strong>Frontend:</strong> HTML, CSS, JavaScript, Angular</li>
-                        <li><strong>Backend / Desktop:</strong> C#, .NET, SQLServer, Python, FastAPI</li>
-                        <li><strong>Tooling:</strong> Git, GitHub, PowerShell</li>
-                    </ul>
-
-                    <h3 class="heading-compact">Quick facts</h3>
-                    <p class="muted-small">Full‑time Software Engineer at InvoiceQ. Experienced in building user-centered interfaces, troubleshooting infrastructure, and automating developer setup. Open to collaborations and freelance work.</p>
-                </div>
-
-                <div class="about-cards">
-                    <article class="about-card">
-                        <h4 class="about-card-title">Focus Areas</h4>
-                        <ul class="about-list">
-                            <li>Angular &amp; TypeScript front‑end</li>
-                            <li>Accessible, responsive UI</li>
-                            <li>Performance and clean architecture</li>
-                        </ul>
-                    </article>
-
-                    <article class="about-card">
-                        <h4 class="about-card-title">Toolbox</h4>
-                        <ul class="about-tags">
-                            <li class="tag">HTML</li>
-                            <li class="tag">CSS</li>
-                            <li class="tag">JavaScript</li>
-                            <li class="tag">TypeScript</li>
-                            <li class="tag">Angular</li>
-                            <li class="tag">C# / .NET</li>
-                            <li class="tag">SQLServer</li>
-                            <li class="tag">MySQL</li>
-                            <li class="tag">NoSQL</li>
-                            <li class="tag">Python</li>
-                            <li class="tag">FastAPI</li>
-                            <li class="tag">Git</li>
-                            <li class="tag">PowerShell</li>
-                            <li class="tag">Firebase</li>
-                        </ul>
-                    </article>
-
-                    <article class="about-card">
-                        <h4 class="about-card-title">Principles</h4>
-                        <ul class="about-list">
-                            <li>Ship iteratively with quality</li>
-                            <li>Automate repeatable workflows</li>
-                            <li>Communicate clearly, document decisions</li>
-                        </ul>
-                    </article>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="education" class="section education" aria-labelledby="education-heading">
-        <div class="container">
-            <h2 id="education-heading">Education</h2>
-
-            <div class="edu-grid" role="list">
-                <article class="edu-card" role="listitem" aria-labelledby="edu-bsc">
-                    <div class="edu-badge" aria-hidden="true"><i class="fas fa-graduation-cap"></i></div>
-                    <div class="edu-body">
-                        <h3 id="edu-bsc">Bachelor of Computer Engineering</h3>
-                        <p class="edu-meta">
-                            <span class="edu-school">BAU, Faculty of Engineering Technology (FET)</span>
-                            <span class="edu-dot">•</span>
-                            <time datetime="2020">2020</time> – <time datetime="2024">2024</time>
-                        </p>
-                        <p class="edu-desc">GPA: 2.54 (Good) — Ranked second in the Computer Engineering Department.</p>
-                        
-                        <div class="edu-footer">
-                            <span class="edu-chip">GPA 2.54</span>
-                            <span class="edu-chip">Dept. Rank #2</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="edu-card" role="listitem" aria-labelledby="edu-diploma">
-                    <div class="edu-badge" aria-hidden="true"><i class="fas fa-network-wired"></i></div>
-                    <div class="edu-body">
-                        <h3 id="edu-diploma">Diploma in Communications and Computer Networks Engineering</h3>
-                        <p class="edu-meta">
-                            <span class="edu-school">BAU, Faculty of Engineering Technology (FET)</span>
-                            <span class="edu-dot">•</span>
-                            <time datetime="2017">2017</time> – <time datetime="2020">2020</time>
-                        </p>
-                        <p class="edu-desc">GPA: 84.9% (Very Good) — Ranked third in the major nationwide.</p>
-                        
-                        <div class="edu-footer">
-                            <span class="edu-chip">GPA 84.9%</span>
-                            <span class="edu-chip">Nationwide Top 3</span>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <section id="experience" class="section experience" aria-labelledby="experience-heading">
-        <div class="container">
-            <h2 id="experience-heading">Experience</h2>
-            <p class="section-intro">A snapshot of hands-on roles and training, focused on impact and outcomes.</p>
-
-            <div class="exp-grid" role="list">
-                <article class="exp-card" role="listitem" aria-labelledby="exp-invoiceq">
-                    <div class="exp-badge" aria-hidden="true"><i class="fas fa-briefcase"></i></div>
-                    <div class="exp-body">
-                        <span class="category-badge work">Work</span>
-                        <h4 id="exp-invoiceq">Software Engineer (Full‑time)</h4>
-                        <p class="exp-meta">
-                            <span class="exp-org">InvoiceQ</span>
-                            <span class="exp-dot">•</span>
-                            <time datetime="2025">2025</time> – <time datetime="present">Present</time>
-                        </p>
-                        <p>Building and maintaining production features, integrations, and performant UIs.</p>
-                        <ul class="exp-bullets">
-                            <li>Shipped features end‑to‑end with reviews and testing</li>
-                            <li>Collaborated across teams to improve reliability and UX</li>
-                        </ul>
-                        <div class="exp-footer">
-                            <span class="exp-chip">Full‑time</span>
-                            <span class="exp-chip">InvoiceQ</span>
-                        </div>
-                    </div>
-                </article>
-                <article class="exp-card" role="listitem" aria-labelledby="exp-maint">
-                    <div class="exp-badge" aria-hidden="true"><i class="fas fa-tools"></i></div>
-                    <div class="exp-body">
-                        <span class="category-badge work">Work</span>
-                        <h4 id="exp-maint">IT Maintenance Technician (Volunteer)</h4>
-                        <p class="exp-meta">
-                            <span class="exp-org">Self‑Initiated</span>
-                            <span class="exp-dot">•</span>
-                            <time datetime="2018">2018</time> – <time datetime="2025">Present</time>
-                        </p>
-                        <p>Maintained software/hardware for student devices and provided ongoing tech support.</p>
-                        <ul class="exp-bullets">
-                            <li>Reduced turnaround time on repairs and OS reinstalls</li>
-                            <li>Standardized troubleshooting steps for recurring issues</li>
-                        </ul>
-                        <div class="exp-footer">
-                            <span class="exp-chip">Hardware</span>
-                            <span class="exp-chip">Windows</span>
-                            <span class="exp-chip">Support</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="exp-card" role="listitem" aria-labelledby="exp-writer">
-                    <div class="exp-badge" aria-hidden="true"><i class="fas fa-pen-nib"></i></div>
-                    <div class="exp-body">
-                        <span class="category-badge work">Work</span>
-                        <h4 id="exp-writer">Technical Content Writer (Freelance)</h4>
-                        <p class="exp-meta">
-                            <span class="exp-org">Independent</span>
-                            <span class="exp-dot">•</span>
-                            <time datetime="2014">2014</time> – <time datetime="2016">2016</time>
-                        </p>
-                        <p>Researched and wrote practical tutorials for an international audience.</p>
-                        <ul class="exp-bullets">
-                            <li>Published concise tutorials with reproducible steps</li>
-                            <li>Improved engagement through practical examples</li>
-                        </ul>
-                        <div class="exp-footer">
-                            <span class="exp-chip">Writing</span>
-                            <span class="exp-chip">Tutorials</span>
-                            <span class="exp-chip">Education</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="exp-card" role="listitem" aria-labelledby="exp-network">
-                    <div class="exp-badge" aria-hidden="true"><i class="fas fa-network-wired"></i></div>
-                    <div class="exp-body">
-                        <span class="category-badge training">Training</span>
-                        <h4 id="exp-network">Networking Engineer</h4>
-                        <p class="exp-meta">
-                            <span class="exp-org">Jordanian Customs</span>
-                            <span class="exp-dot">•</span>
-                            <time datetime="2019">2019</time> – <time datetime="2020">2020</time>
-                        </p>
-                        <p>Designed and secured network infrastructure; monitored uptime and reliability.</p>
-                        <ul class="exp-bullets">
-                            <li>Documented change management and incident resolution</li>
-                            <li>Monitored uptime and improved reliability</li>
-                        </ul>
-                        <div class="exp-footer">
-                            <span class="exp-chip">Networking</span>
-                            <span class="exp-chip">Security</span>
-                            <span class="exp-chip">Monitoring</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="exp-card" role="listitem" aria-labelledby="exp-fe">
-                    <div class="exp-badge" aria-hidden="true"><i class="fas fa-code"></i></div>
-                    <div class="exp-body">
-                        <span class="category-badge training">Training</span>
-                        <h4 id="exp-fe">Front‑End Training</h4>
-                        <p class="exp-meta">
-                            <span class="exp-org">Digiskills &amp; IIH</span>
-                            <span class="exp-dot">•</span>
-                            <time datetime="2025">2025</time>
-                        </p>
-                        <p>Built responsive Angular apps with TypeScript; focused on components and performance.</p>
-                        <ul class="exp-bullets">
-                            <li>Built modular components, routing, and state flows</li>
-                            <li>Integrated APIs and optimized for Lighthouse</li>
-                        </ul>
-                        <div class="exp-footer">
-                            <span class="exp-chip">Angular</span>
-                            <span class="exp-chip">TypeScript</span>
-                            <span class="exp-chip">Performance</span>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="section projects" aria-labelledby="projects-heading">
-        <div class="container">
-            <h2 id="projects-heading">Projects</h2>
-            <p class="section-intro">Selected projects showing a mix of desktop and web applications, focusing on usability and maintainability.</p>
-
-            <div class="project-grid">
-                <article class="project-card" aria-labelledby="proj-healthmate">
-                    <div class="project-image">
-                        <img src="assets/HealthMate.png" alt="Health Mate screenshot" />
-                    </div>
-                    <div class="project-info">
-                        <h3 id="proj-healthmate">Health Mate</h3>
-                        <p>A feature-rich C# WinForms health tracking application with calorie tracking and workout management.</p>
-                        <div class="tech-list">C#, WinForms, SQLServer</div>
-                        <div class="project-actions">
-                            <a href="https://github.com/mahmoud-faiyumi/HealthMate.git" class="btn" target="_blank" rel="noopener">GitHub</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card" aria-labelledby="proj-healthmate-angular">
-                    <div class="project-image">
-                        <img src="assets/HealthMate-Angular.png" alt="Health Mate (Angular) web app preview" />
-                    </div>
-                    <div class="project-info">
-                        <h3 id="proj-healthmate-angular">Health Mate (Angular)</h3>
-                        <p>Refactored Health Mate as a modern web app using Angular with Firebase backend and Angular Material UI components.</p>
-                        <div class="tech-list">Angular, Firebase, Angular Material, Localization</div>
-                    </div>
-                    <div class="project-actions">
-                        <a href="https://health-mate-web.web.app/login" class="btn" target="_blank" rel="noopener">Live</a>
-                    </div>
-                </article>
-
-                <article class="project-card" aria-labelledby="proj-mtlibrary">
-                    <div class="project-image">
-                        <img src="assets/mt-library.png" alt="MT Library interface preview" />
-                    </div>
-                    <div class="project-info">
-                        <h3 id="proj-mtlibrary">MT Library</h3>
-                        <p>Web platform with advanced filtering and feedback capabilities powered by EmailJS.</p>
-                        <div class="tech-list">HTML, CSS, JS, EmailJS</div>
-                        <div class="project-actions">
-                            <a href="https://mt-library.web.app/" class="btn" target="_blank" rel="noopener">Live</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card" aria-labelledby="proj-angularfirst">
-                    <div class="project-image">
-                        <img src="assets/ngfirstapp.png" alt="Angular First App screenshot" />
-                    </div>
-                    <div class="project-info">
-                        <h3 id="proj-angularfirst">Angular First App</h3>
-                        <p>A dynamic Angular web app showcasing modern UI components and best practices.</p>
-                        <div class="tech-list">Angular, TypeScript</div>
-                        <div class="project-actions">
-                            <a href="https://ngfirstapp-24fdc.web.app/" class="btn" target="_blank" rel="noopener">Live</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card" aria-labelledby="proj-todo">
-                    <div class="project-image">
-                        <img src="assets/ToDo-List.jpeg" alt="To-Do List screenshot" />
-                    </div>
-                    <div class="project-info">
-                        <h3 id="proj-todo">To-Do List</h3>
-                        <p>An Angular to-do list web app for task management and persistence.</p>
-                        <div class="tech-list">Angular, LocalStorage</div>
-                        <div class="project-actions">
-                            <a href="https://mahmoud-faiyumi.github.io/ToDoList/" class="btn" target="_blank" rel="noopener">Live</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card" aria-labelledby="proj-setup-ts">
-                    <div class="project-image">
-                        <img src="assets/Setup-TypeScript.png" alt="Setup TypeScript script" />
-                    </div>
-                    <div class="project-info">
-                        <h3 id="proj-setup-ts">Setup-TypeScript</h3>
-                        <p>PowerShell script for automatically installing and configuring TypeScript and tooling.</p>
-                        <div class="tech-list">PowerShell, TypeScript</div>
-                        <div class="project-actions">
-                            <a href="https://github.com/mahmoud-faiyumi/Setup-TypeScript" class="btn" target="_blank" rel="noopener">GitHub</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card" aria-labelledby="proj-angular-cli">
-                    <div class="project-image">
-                        <img src="assets/Angular-CLI-NVM-Setup.png" alt="Angular CLI & NVM setup" />
-                    </div>
-                    <div class="project-info">
-                        <h3 id="proj-angular-cli">Angular-CLI-NVM-Setup</h3>
-                        <p>PowerShell script for automated installation and setup of Angular CLI and Node Version Manager (NVM).</p>
-                        <div class="tech-list">PowerShell, Node, Angular CLI</div>
-                        <div class="project-actions">
-                            <a href="https://github.com/mahmoud-faiyumi/Angular-CLI-NVM-Setup" class="btn" target="_blank" rel="noopener">GitHub</a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="section skills">
-        <div class="container">
-            <h2>Technical skills</h2>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <i class="fas fa-code skill-icon" aria-hidden="true"></i>
-                    <h4>Programming</h4>
-                    <p>C#, .NET, HTML, CSS, JS, TS, Angular, Micro‑frontends, Python, React, Node.js, Vibe Coding</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-database skill-icon" aria-hidden="true"></i>
-                    <h4>Databases</h4>
-                    <p>MSSQL, MySQL, MongoDB, NoSQL</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-server skill-icon" aria-hidden="true"></i>
-                    <h4>Backend &amp; APIs</h4>
-                    <p>FastAPI, REST</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-tools skill-icon" aria-hidden="true"></i>
-                    <h4>Tools</h4>
-                    <p>Microsoft Office, Git &amp; GitHub</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-cloud skill-icon" aria-hidden="true"></i>
-                    <h4>Cloud</h4>
-                    <p>Firebase</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-network-wired skill-icon" aria-hidden="true"></i>
-                    <h4>Networking</h4>
-                    <p>Infrastructure maintenance, troubleshooting</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-paint-brush skill-icon" aria-hidden="true"></i>
-                    <h4>Design</h4>
-                    <p>Adobe Illustrator, Canva</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <h2 class="section-heading--spaced">Soft skills</h2>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <i class="fas fa-users skill-icon" aria-hidden="true"></i>
-                    <h4>Teamwork</h4>
-                    <p>Collaborative and supportive</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-comments skill-icon" aria-hidden="true"></i>
-                    <h4>Communication</h4>
-                    <p>Clear, concise, and effective</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-lightbulb skill-icon" aria-hidden="true"></i>
-                    <h4>Problem Solving</h4>
-                    <p>Analytical and innovative thinker</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-chart-line skill-icon" aria-hidden="true"></i>
-                    <h4>Adaptability</h4>
-                    <p>Quick learner and flexible</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-handshake skill-icon" aria-hidden="true"></i>
-                    <h4>Leadership</h4>
-                    <p>Mentoring and team-building abilities</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="volunteer" class="section volunteer" aria-label="Volunteer work">
-        <div class="container">
-            <h2>Volunteer Work</h2>
-            <p class="section-intro section-intro--spacious">
-                I contribute time and skills to community projects and student teams. Below are some organizations I've worked with.
-            </p>
-
-            <div class="volunteer-grid">
-                <article class="volunteer-item">
-                    <figure>
-                        <img src="assets/ZerOne.png" alt="ZerOne logo" class="volunteer-logo">
-                        <figcaption>
-                            <h4>ZerOne</h4>
-                            <p class="muted-small">Community tech workshops</p>
-                        </figcaption>
-                    </figure>
-                </article>
-
-                <article class="volunteer-item">
-                    <figure>
-                        <img src="assets/mt-team.png" alt="Maintenance Team logo" class="volunteer-logo">
-                        <figcaption>
-                            <h4>Maintenance Team</h4>
-                            <p class="muted-small">IT support & hardware maintenance</p>
-                        </figcaption>
-                    </figure>
-                </article>
-
-                <article class="volunteer-item">
-                    <figure>
-                        <img src="assets/ieee.png" alt="IEEE logo" class="volunteer-logo">
-                        <figcaption>
-                            <h4>IEEE</h4>
-                            <p class="muted-small">Student branch activities</p>
-                        </figcaption>
-                    </figure>
-                </article>
-
-                <article class="volunteer-item">
-                    <figure>
-                        <img src="assets/shaghaf.png" alt="Shaghaf Family logo" class="volunteer-logo">
-                        <figcaption>
-                            <h4>Shaghaf Family</h4>
-                            <p class="muted-small">Community outreach</p>
-                        </figcaption>
-                    </figure>
-                </article>
-
-                <article class="volunteer-item">
-                    <figure>
-                        <img src="assets/Mujaddidun.png" alt="Mujaddidun logo" class="volunteer-logo">
-                        <figcaption>
-                            <h4>Mujaddidun Jo</h4>
-                            <p class="muted-small">Education initiatives</p>
-                        </figcaption>
-                    </figure>
-                </article>
-
-                <article class="volunteer-item">
-                    <figure>
-                        <img src="assets/nahno.png" alt="Nahno logo" class="volunteer-logo">
-                        <figcaption>
-                            <h4>Nahno</h4>
-                            <p class="muted-small">Local volunteering</p>
-                        </figcaption>
-                    </figure>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <section id="certifications" class="section certifications" aria-labelledby="certifications-heading">
-        <div class="container">
-            <h2 id="certifications-heading">Certifications</h2>
-            <p class="section-intro">Selected professional certifications and credentials demonstrating my hands-on skills in IT, security, and software tools.</p>
-
-            <div class="cert-grid">
-                <article class="cert-card" aria-labelledby="cert-a-plus" tabindex="0">
-                    <div class="cert-badge" aria-hidden="true"><i class="fas fa-certificate"></i></div>
-                    <div class="cert-body">
-                        <h3 id="cert-a-plus">A+ Certification</h3>
-                        <p class="muted-small">CompTIA A+ — <time datetime="2016">2016</time></p>
-                        <p class="cert-desc">Foundational hardware and troubleshooting certification covering PC hardware, OS, and basic networking.</p>
-                    </div>
-                </article>
-
-                <article class="cert-card" aria-labelledby="cert-icdl" tabindex="0">
-                    <div class="cert-badge" aria-hidden="true"><i class="fas fa-laptop-code"></i></div>
-                    <div class="cert-body">
-                        <h3 id="cert-icdl">ICDL</h3>
-                        <p class="muted-small">International Computer Driving License — <time datetime="2020">2020</time> (Edraak)</p>
-                        <p class="cert-desc">Validated competency in essential computer skills and office productivity tools.</p>
-                    </div>
-                </article>
-
-                <article class="cert-card" aria-labelledby="cert-security+" tabindex="0">
-                    <div class="cert-badge" aria-hidden="true"><i class="fas fa-shield-alt"></i></div>
-                    <div class="cert-body">
-                        <h3 id="cert-security+">Security+</h3>
-                        <p class="muted-small">CompTIA Security+ — <time datetime="2022">2022</time> (Pioneers Academy)</p>
-                        <p class="cert-desc">Focus on network security, threat management, and risk mitigation fundamentals.</p>
-                    </div>
-                </article>
-
-                <article class="cert-card" aria-labelledby="cert-angular" tabindex="0">
-                    <div class="cert-badge" aria-hidden="true"><i class="fab fa-angular"></i></div>
-                    <div class="cert-body">
-                        <h3 id="cert-angular">Angular Front-End Development</h3>
-                        <p class="muted-small">DigiSkills & IIH — <time datetime="2025">2025</time></p>
-                        <p class="cert-desc">Comprehensive Angular training covering modern front-end development, TypeScript, component architecture, and best practices for building scalable web applications.</p>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <section id="articles" class="section articles" aria-labelledby="articles-heading">
-        <div class="container">
-            <h2 id="articles-heading">Technical Articles</h2>
-            <p class="section-intro">Deep-dive technical write-ups, best practices, and insights I've shared about modern web development, Angular, JavaScript, and developer tooling.</p>
-
-            <div class="articles-grid" role="list">
-                <article class="article-item" role="listitem" aria-labelledby="art-npm">
-                    <div class="article-icon">
-                        <i class="fab fa-npm" aria-hidden="true"></i>
-                    </div>
-                    <div class="article-content">
-                        <div class="article-category">
-                            <span class="category-badge package-manager">Package Management</span>
-                        </div>
-                        <h3 id="art-npm">NPM vs Yarn on Angular</h3>
-                        <p>Comprehensive comparison of NPM and Yarn for dependency management in Angular projects. Covers performance benchmarks, lock file differences, and when to choose each tool for optimal development workflow.</p>
-                        <div class="article-tags">
-                            <span class="tag">Angular</span>
-                            <span class="tag">NPM</span>
-                            <span class="tag">Yarn</span>
-                            <span class="tag">Performance</span>
-                        </div>
-                        <div class="article-meta">
-                            <div class="meta-info">
-                                <span class="file-size"><i class="fas fa-file-pdf"></i> 100.12 KB</span>
-                                <span class="read-time"><i class="fas fa-clock"></i> 5 min read</span>
-                            </div>
-                            <a href="articles/NPM vs Yarn on Angular.pdf" target="_blank" rel="noopener" class="btn btn-code" aria-label="Open NPM vs Yarn on Angular article in new tab">
-                                <i class="fas fa-external-link-alt"></i> Read Article
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="article-item" role="listitem" aria-labelledby="art-loops">
-                    <div class="article-icon">
-                        <i class="fas fa-sync-alt" aria-hidden="true"></i>
-                    </div>
-                    <div class="article-content">
-                        <div class="article-category">
-                            <span class="category-badge javascript">JavaScript</span>
-                        </div>
-                        <h3 id="art-loops">for vs forEach vs for...in in JavaScript</h3>
-                        <p>In-depth analysis of JavaScript iteration patterns. Learn when to use traditional for loops, forEach, and for...in for optimal performance and code clarity. Includes real-world examples and performance benchmarks.</p>
-                        <div class="article-tags">
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">Performance</span>
-                            <span class="tag">Loops</span>
-                            <span class="tag">Best Practices</span>
-                        </div>
-                        <div class="article-meta">
-                            <div class="meta-info">
-                                <span class="file-size"><i class="fas fa-file-pdf"></i> 3.9 MB</span>
-                                <span class="read-time"><i class="fas fa-clock"></i> 12 min read</span>
-                            </div>
-                            <a href="articles/for vs forEach vs for...in in JavaScript.pdf" target="_blank" rel="noopener" class="btn btn-code" aria-label="Open for vs forEach vs for...in in JavaScript article in new tab">
-                                <i class="fas fa-external-link-alt"></i> Read Article
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="article-item" role="listitem" aria-labelledby="art-ngclass">
-                    <div class="article-icon">
-                        <i class="fab fa-angular" aria-hidden="true"></i>
-                    </div>
-                    <div class="article-content">
-                        <div class="article-category">
-                            <span class="category-badge angular">Angular</span>
-                        </div>
-                        <h3 id="art-ngclass">[Class] vs [ngClass], and [Style] vs [ngStyle] in Angular</h3>
-                        <p>Master Angular's dynamic styling capabilities. Clear examples and use cases for property binding vs structural directives. Learn when to use each approach for maintainable and performant Angular applications.</p>
-                        <div class="article-tags">
-                            <span class="tag">Angular</span>
-                            <span class="tag">CSS</span>
-                            <span class="tag">Directives</span>
-                            <span class="tag">Styling</span>
-                        </div>
-                        <div class="article-meta">
-                            <div class="meta-info">
-                                <span class="file-size"><i class="fas fa-file-pdf"></i> 132.24 KB</span>
-                                <span class="read-time"><i class="fas fa-clock"></i> 8 min read</span>
-                            </div>
-                            <a href="articles/Understanding the Differences Between [Class] and [ngClass], and [Style] and [ngStyle] in Angular.pdf" target="_blank" rel="noopener" class="btn btn-code" aria-label="Open Differences Between Class and ngClass article in new tab">
-                                <i class="fas fa-external-link-alt"></i> Read Article
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="article-item" role="listitem" aria-labelledby="art-inputs">
-                    <div class="article-icon">
-                        <i class="fas fa-exchange-alt" aria-hidden="true"></i>
-                    </div>
-                    <div class="article-content">
-                        <div class="article-category">
-                            <span class="category-badge angular">Angular</span>
-                        </div>
-                        <h3 id="art-inputs">Comparing @Input, @Output, Two-Way Binding, and ViewChild in Angular</h3>
-                        <p>Complete guide to Angular component communication patterns. Learn the differences between inputs, outputs, two-way binding, and ViewChild with practical examples and performance considerations.</p>
-                        <div class="article-tags">
-                            <span class="tag">Angular</span>
-                            <span class="tag">Components</span>
-                            <span class="tag">Communication</span>
-                            <span class="tag">Architecture</span>
-                        </div>
-                        <div class="article-meta">
-                            <div class="meta-info">
-                                <span class="file-size"><i class="fas fa-file-pdf"></i> 163.54 KB</span>
-                                <span class="read-time"><i class="fas fa-clock"></i> 10 min read</span>
-                            </div>
-                            <a href="articles/Comparing [Input], [Output], Two-Way Binding, and ViewChild in Angular.pdf" target="_blank" rel="noopener" class="btn btn-code" aria-label="Open Comparing Input Output article in new tab">
-                                <i class="fas fa-external-link-alt"></i> Read Article
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="article-item" role="listitem" aria-labelledby="art-ng20">
-                    <div class="article-icon">
-                        <i class="fas fa-rocket" aria-hidden="true"></i>
-                    </div>
-                    <div class="article-content">
-                        <div class="article-category">
-                            <span class="category-badge angular">Angular</span>
-                        </div>
-                        <h3 id="art-ng20">Angular 20: What's New and How to Upgrade</h3>
-                        <p>Complete overview of Angular 20's latest features and improvements. Includes a step-by-step upgrade guide, breaking changes analysis, and migration strategies for existing projects.</p>
-                        <div class="article-tags">
-                            <span class="tag">Angular</span>
-                            <span class="tag">Updates</span>
-                            <span class="tag">Migration</span>
-                            <span class="tag">New Features</span>
-                        </div>
-                        <div class="article-meta">
-                            <div class="meta-info">
-                                <span class="file-size"><i class="fas fa-file-pdf"></i> 255.78 KB</span>
-                                <span class="read-time"><i class="fas fa-clock"></i> 15 min read</span>
-                            </div>
-                            <a href="articles/Angular 20 What's New and How to Upgrade.pdf" target="_blank" rel="noopener" class="btn btn-code" aria-label="Open Angular 20 What's New article in new tab">
-                                <i class="fas fa-external-link-alt"></i> Read Article
-                            </a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section contact">
-        <div class="container contact-container">
-            <h2>Let's Connect</h2>
-            <p class="section-intro">Ready to build something amazing together? I'm always excited to discuss new projects, collaborations, or just chat about tech!</p>
-
-            <div class="contact-grid">
-                <div class="contact-methods" role="list">
-                    <a class="contact-btn" role="listitem" href="mailto:mahmoud.faiyumi98@outlook.com" aria-label="Send email to Mahmoud" title="Email">
-                        <span class="contact-icon" aria-hidden="true"><i class="fa-solid fa-envelope"></i></span>
-                        <span class="contact-text">Send Email</span>
+    <main id="main">
+        <section class="hero" id="hero" aria-label="Hero">
+            <div class="hero-particles"></div>
+            <div class="hero-content container">
+                <h1 class="hero-title">
+                    <span class="terminal-text" data-bind="hero.prompt">$ whoami</span><br>
+                    <span class="highlight" data-bind="hero.name">Mahmoud Alfayoumi</span>
+                </h1>
+                <p class="hero-subtitle" data-bind="hero.subtitle">
+                    Software Engineer | Angular &amp; Micro-frontends | Full-Stack Developer
+                </p>
+                <div class="tech-strip" id="tech-strip" aria-label="Technologies I work with daily"></div>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <span class="code-font">./view_projects.sh</span>
                     </a>
-
-                    <a class="contact-btn" role="listitem" href="https://www.linkedin.com/in/mahmoud-faiyumi/" target="_blank" rel="noopener" aria-label="Open LinkedIn profile" title="LinkedIn">
-                        <span class="contact-icon" aria-hidden="true"><i class="fa-brands fa-linkedin"></i></span>
-                        <span class="contact-text">LinkedIn</span>
+                    <a href="#contact" class="btn btn-secondary">
+                        <span class="code-font">./contact.sh</span>
                     </a>
-
-                    <a class="contact-btn" role="listitem" href="https://wa.me/962782185255" target="_blank" rel="noopener" aria-label="Open WhatsApp to chat" title="WhatsApp">
-                        <span class="contact-icon" aria-hidden="true"><i class="fa-brands fa-square-whatsapp"></i></span>
-                        <span class="contact-text">WhatsApp</span>
-                    </a>
-
-                    <a class="contact-btn" role="listitem" href="https://github.com/mahmoud-faiyumi" target="_blank" rel="noopener" aria-label="Open GitHub profile" title="GitHub">
-                        <span class="contact-icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span>
-                        <span class="contact-text">GitHub</span>
+                    <a href="cv/" class="btn btn-code" aria-label="View CV (PDF)">
+                        <span class="code-font">./download_cv.sh</span>
                     </a>
                 </div>
-
-                <div class="contact-card">
-                    <div class="code-block">
-                        <span class="syntax-comment">// Available for:</span><br>
-                        <span class="syntax-keyword">•</span> <span class="syntax-string">Freelance Projects</span><br>
-                        <span class="syntax-keyword">•</span> <span class="syntax-string" style="text-decoration: line-through; opacity: 0.6;">Full-time Opportunities</span><br>
-                        <span class="syntax-keyword">•</span> <span class="syntax-string">Tech Collaborations</span><br>
-                        <span class="syntax-keyword">•</span> <span class="syntax-string">Open Source Contributions</span><br><br>
-                        <span class="syntax-comment">// Response time: &lt; 24 hours</span>
-                    </div>
-                    <div class="contact-card-actions">
-                        <a href="mailto:mahmoud.faiyumi98@outlook.com" class="btn btn-primary">
-                            <span class="code-font">./send_email.sh</span>
-                        </a>
-                        <a href="#projects" class="btn btn-secondary">
-                            <span class="code-font">./view_projects.sh</span>
-                        </a>
-                    </div>
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section id="about" class="section about" aria-labelledby="about-heading">
+            <div class="container">
+                <h2 id="about-heading">About</h2>
+                <div class="about-grid" id="about-root"></div>
+            </div>
+        </section>
+
+        <section id="education" class="section education" aria-labelledby="education-heading">
+            <div class="container">
+                <h2 id="education-heading">Education</h2>
+                <div class="edu-grid" id="education-root" role="list"></div>
+            </div>
+        </section>
+
+        <section id="experience" class="section experience" aria-labelledby="experience-heading">
+            <div class="container">
+                <h2 id="experience-heading">Experience</h2>
+                <p class="section-intro">A snapshot of hands-on roles and training, focused on impact and outcomes.</p>
+                <div class="exp-grid" id="experience-root" role="list"></div>
+            </div>
+        </section>
+
+        <section id="projects" class="section projects" aria-labelledby="projects-heading">
+            <div class="container">
+                <h2 id="projects-heading">Projects</h2>
+                <p class="section-intro">Selected projects with problem, role, result, and links — focused on usability and maintainability.</p>
+                <div class="project-grid" id="projects-root"></div>
+            </div>
+        </section>
+
+        <section id="skills" class="section skills" aria-labelledby="skills-heading">
+            <div class="container">
+                <h2 id="skills-heading">Technical skills</h2>
+                <div class="skills-grid" id="skills-tech-root"></div>
+            </div>
+            <div class="container">
+                <h2 class="section-heading--spaced">Soft skills</h2>
+                <div class="skills-grid" id="skills-soft-root"></div>
+            </div>
+        </section>
+
+        <section id="volunteer" class="section volunteer" aria-labelledby="volunteer-heading">
+            <div class="container">
+                <h2 id="volunteer-heading">Volunteer Work</h2>
+                <p class="section-intro section-intro--spacious" id="volunteer-intro"></p>
+                <div class="volunteer-grid" id="volunteer-root"></div>
+            </div>
+        </section>
+
+        <section id="certifications" class="section certifications" aria-labelledby="certifications-heading">
+            <div class="container">
+                <h2 id="certifications-heading">Certifications</h2>
+                <p class="section-intro">Selected professional certifications and credentials demonstrating hands-on skills in IT, security, and software tools.</p>
+                <div class="cert-grid" id="certifications-root"></div>
+            </div>
+        </section>
+
+        <section id="articles" class="section articles" aria-labelledby="articles-heading">
+            <div class="container">
+                <h2 id="articles-heading">Technical Articles</h2>
+                <p class="section-intro">Short summaries with full PDF deep-dives on Angular, JavaScript, and developer tooling.</p>
+                <div class="articles-grid" id="articles-root" role="list"></div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact" aria-labelledby="contact-heading">
+            <div class="container contact-container">
+                <h2 id="contact-heading">Let's Connect</h2>
+                <p class="section-intro" id="contact-intro"></p>
+                <div class="contact-grid" id="contact-root"></div>
+            </div>
+        </section>
+    </main>
 
     <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-main">
                     <p class="footer-text">
-                        <span class="code-font">Built with</span> 
-                        <span class="syntax-keyword">passion</span>, 
-                        <span class="syntax-string">coffee</span>, 
-                        <span class="syntax-function">and</span> 
-                        <span class="syntax-variable">lots of code</span> ☕️
+                        <span class="code-font">Built with</span>
+                        <span class="syntax-keyword">passion</span>,
+                        <span class="syntax-string">coffee</span>,
+                        <span class="syntax-function">and</span>
+                        <span class="syntax-variable">lots of code</span>
                     </p>
                     <p class="footer-copyright">
-                        © 2025 Mahmoud Alfayoumi • 
+                        © 2026 Mahmoud Alfayoumi •
                         <span class="syntax-comment">// Always learning, always building</span>
                     </p>
                 </div>
-                
                 <div class="footer-links">
-                    <a href="#hero" class="footer-link">
-                        <span class="code-font">./home</span>
-                    </a>
-                    <a href="#projects" class="footer-link">
-                        <span class="code-font">./projects</span>
-                    </a>
-                    <a href="#contact" class="footer-link">
-                        <span class="code-font">./contact</span>
-                    </a>
+                    <a href="#hero" class="footer-link"><span class="code-font">./home</span></a>
+                    <a href="#projects" class="footer-link"><span class="code-font">./projects</span></a>
+                    <a href="cv/" class="footer-link"><span class="code-font">./cv</span></a>
+                    <a href="#contact" class="footer-link"><span class="code-font">./contact</span></a>
                 </div>
-                
                 <div class="footer-tech">
                     <p class="tech-stack">
                         <span class="syntax-comment">// Tech Stack:</span>
-                        <span class="syntax-string">HTML5</span> • 
-                        <span class="syntax-string">CSS3</span> • 
-                        <span class="syntax-string">JavaScript</span> • 
+                        <span class="syntax-string">HTML5</span> •
+                        <span class="syntax-string">CSS3</span> •
+                        <span class="syntax-string">JavaScript</span> •
                         <span class="syntax-string">Git</span>
                     </p>
                 </div>
@@ -846,6 +243,11 @@
         </div>
     </footer>
 
+    <button id="back-to-top" class="back-to-top" type="button" aria-label="Back to top" hidden>
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <script src="content.js"></script>
     <script src="script.js"></script>
 </body>
 

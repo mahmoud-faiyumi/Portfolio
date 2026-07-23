@@ -52,6 +52,7 @@ html {
   font-size: 16px;
   scroll-behavior: smooth;
   overflow-x: hidden;
+  scroll-padding-top: var(--header-height);
 }
 
 *,
@@ -69,11 +70,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-}
-
-body.light-mode {
-  background: var(--light-bg);
-  color: var(--text-on-light);
 }
 
 
@@ -172,8 +168,11 @@ body.light-mode {
       var(--secondary-color) 50%,
       var(--primary-color) 80%,
       transparent 100%) 1;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 4000;
   transition: all var(--transition-speed) var(--ease-out);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
@@ -181,6 +180,10 @@ body.light-mode {
 
 .header {
   min-height: var(--header-height);
+}
+
+main {
+  padding-top: var(--header-height);
 }
 
 .header::before {
@@ -329,15 +332,19 @@ body.light-mode {
 }
 
 .nav-links li a:hover,
-.nav-links li a:focus,
+.nav-links li a:focus-visible,
 .nav-links li a.active {
   color: var(--primary-color);
 }
 
 .nav-links li a:hover::before,
-.nav-links li a:focus::before,
+.nav-links li a:focus-visible::before,
 .nav-links li a.active::before {
   transform: scaleX(1);
+}
+
+.nav-links li a:focus:not(:focus-visible) {
+  outline: none;
 }
 
 .menu-toggle {
@@ -448,7 +455,7 @@ body.light-mode {
   }
 
   .nav-links li a:hover::before,
-  .nav-links li a:focus::before,
+  .nav-links li a:focus-visible::before,
   .nav-links li a.active::before {
     content: '> ';
     position: static;
@@ -461,7 +468,7 @@ body.light-mode {
   }
 
   .nav-links li a:hover,
-  .nav-links li a:focus,
+  .nav-links li a:focus-visible,
   .nav-links li a.active {
     background: var(--primary-color);
     color: var(--dark-bg);
@@ -2064,21 +2071,6 @@ body.light-mode {
   }
 }
 
-@media (prefers-color-scheme: light) {
-  body.light-mode {
-    background: var(--light-bg);
-    color: var(--text-on-light);
-  }
-
-  .project-card,
-  .skill-item,
-  .article-item,
-  .contact,
-  .footer {
-    background: var(--light-surface);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
 
   .about .profile,
@@ -2383,5 +2375,191 @@ body.light-mode {
 
   .contact-card-actions {
     justify-content: center;
+  }
+}
+
+/* ===== Enhancements: skip link, tech strip, projects, availability, back-to-top ===== */
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 5000;
+  background: var(--primary-color);
+  color: #0a0a0a;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.tech-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  justify-content: center;
+  margin: 1.25rem 0 1.75rem;
+}
+
+.tech-strip-item {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  color: var(--secondary-color);
+  border: 1px solid rgba(0, 212, 255, 0.35);
+  background: rgba(0, 212, 255, 0.08);
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  animation: tech-strip-in 0.55s var(--ease-out) both;
+}
+
+.tech-strip-item:nth-child(2) { animation-delay: 0.05s; }
+.tech-strip-item:nth-child(3) { animation-delay: 0.1s; }
+.tech-strip-item:nth-child(4) { animation-delay: 0.15s; }
+.tech-strip-item:nth-child(5) { animation-delay: 0.2s; }
+.tech-strip-item:nth-child(6) { animation-delay: 0.25s; }
+.tech-strip-item:nth-child(7) { animation-delay: 0.3s; }
+.tech-strip-item:nth-child(8) { animation-delay: 0.35s; }
+
+@keyframes tech-strip-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.project-case {
+  margin: 0 0 1rem;
+  padding: 0.85rem 1rem;
+  border-left: 3px solid var(--secondary-color);
+  background: rgba(0, 212, 255, 0.06);
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+.project-case p {
+  margin: 0 0 0.55rem;
+  color: var(--text-on-dark);
+  font-size: 0.92rem;
+}
+
+.project-case p:last-child {
+  margin-bottom: 0;
+}
+
+.project-card.is-expanded {
+  border-color: var(--secondary-color);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28), 0 0 18px rgba(0, 212, 255, 0.18);
+}
+
+.project-actions .btn-details {
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.project-actions .btn-details:hover {
+  background: rgba(0, 255, 136, 0.12);
+}
+
+.article-summary {
+  margin: 0 0 0.75rem !important;
+}
+
+.availability-panel {
+  text-align: left;
+  margin-bottom: 1.25rem;
+}
+
+.avail-heading {
+  margin: 0 0 0.75rem;
+  color: var(--text-muted);
+}
+
+.avail-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.avail-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.35rem 0.75rem;
+  align-items: center;
+  padding: 0.65rem 0.8rem;
+  border-radius: 10px;
+  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.avail-label {
+  font-weight: 600;
+}
+
+.avail-open {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--success);
+}
+
+.avail-closed {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.avail-note {
+  grid-column: 1 / -1;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.avail-response {
+  margin: 0.9rem 0 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 3500;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid var(--primary-color);
+  background: rgba(10, 10, 10, 0.85);
+  color: var(--primary-color);
+  cursor: pointer;
+  box-shadow: var(--shadow-glow);
+  transition: transform var(--transition-speed) var(--ease-out), opacity var(--transition-speed) var(--ease-out);
+}
+
+.back-to-top:hover,
+.back-to-top:focus-visible {
+  transform: translateY(-3px);
+  outline: none;
+}
+
+.back-to-top[hidden] {
+  display: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tech-strip-item {
+    animation: none;
   }
 }
