@@ -416,6 +416,17 @@
 
     let scrollingToId = null;
     let scrollLockTimer = null;
+    let scrollRafId = 0;
+
+    const runScrollWork = () => {
+      scrollRafId = 0;
+      updateSpyFromScroll();
+    };
+
+    const queueScrollWork = () => {
+      if (scrollRafId) return;
+      scrollRafId = window.requestAnimationFrame(runScrollWork);
+    };
 
     navItems.forEach((link) => {
       link.addEventListener("click", function (e) {
@@ -467,7 +478,7 @@
       if (currentId) setActiveNav(currentId);
     }
 
-    window.addEventListener("scroll", updateSpyFromScroll, { passive: true });
+    window.addEventListener("scroll", queueScrollWork, { passive: true });
     window.addEventListener("resize", updateSpyFromScroll);
     updateSpyFromScroll();
 
@@ -535,8 +546,10 @@
   function initScrollUi() {
     const header = document.querySelector(".header");
     const backToTop = document.getElementById("back-to-top");
+    let scrollUiRafId = 0;
 
-    const onScroll = () => {
+    const updateScrollUi = () => {
+      scrollUiRafId = 0;
       const y = window.scrollY || window.pageYOffset;
       if (header) header.classList.toggle("scrolled", y > 100);
       if (backToTop) {
@@ -545,8 +558,13 @@
       }
     };
 
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
+    const queueScrollUi = () => {
+      if (scrollUiRafId) return;
+      scrollUiRafId = window.requestAnimationFrame(updateScrollUi);
+    };
+
+    window.addEventListener("scroll", queueScrollUi, { passive: true });
+    updateScrollUi();
 
     if (backToTop) {
       backToTop.addEventListener("click", () => {
@@ -561,11 +579,7 @@
     const heroParticles = document.querySelector(".hero-particles");
     if (!heroParticles) return;
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduceMotion) return;
-
-    const isNarrow = window.matchMedia("(max-width: 768px)").matches;
-    const count = isNarrow ? 12 : 24;
-
+    const count = reduceMotion ? 0 : 40;
     for (let i = 0; i < count; i++) {
       const particle = document.createElement("div");
       particle.className = "particle";
@@ -576,13 +590,17 @@
     }
   }
 
-  function scheduleParticles() {
-    const run = () => createParticles();
-    if ("requestIdleCallback" in window) {
-      window.requestIdleCallback(run, { timeout: 1500 });
-    } else {
-      window.setTimeout(run, 300);
-    }
+  function initParticleScrollPause() {
+    const hero = document.getElementById("hero");
+    if (!hero || !("IntersectionObserver" in window)) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        hero.classList.toggle("particles-paused", !entry.isIntersecting);
+      },
+      { threshold: 0 }
+    );
+    observer.observe(hero);
   }
 
   /* ---------- Loading screen (short) ---------- */
@@ -632,7 +650,8 @@
     initNav();
     initSectionReveal();
     initScrollUi();
-    scheduleParticles();
+    createParticles();
+    initParticleScrollPause();
     initLoading();
 
     const logo = document.querySelector(".logo");
