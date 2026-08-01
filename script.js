@@ -480,24 +480,54 @@
 
   /* ---------- Section reveal ---------- */
 
+  function revealSection(section) {
+    if (!section || section.classList.contains("visible")) return;
+    section.classList.add("visible");
+  }
+
+  function isSectionNearViewport(section, marginPx) {
+    const rect = section.getBoundingClientRect();
+    const margin = marginPx ?? 0;
+    return rect.top < window.innerHeight + margin && rect.bottom > -margin;
+  }
+
   function initSectionReveal() {
     const sections = document.querySelectorAll(".section");
-    if (!("IntersectionObserver" in window)) {
-      sections.forEach((section) => section.classList.add("visible"));
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (reduceMotion || !("IntersectionObserver" in window)) {
+      sections.forEach((section) => revealSection(section));
       return;
     }
+
+    const revealMargin = Math.min(window.innerHeight * 0.35, 320);
+
+    sections.forEach((section) => {
+      if (isSectionNearViewport(section, revealMargin)) {
+        revealSection(section);
+      }
+    });
+
     const sectionObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
+            revealSection(entry.target);
             sectionObserver.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.15 }
+      {
+        threshold: 0.05,
+        rootMargin: `${revealMargin}px 0px ${revealMargin}px 0px`,
+      }
     );
-    sections.forEach((section) => sectionObserver.observe(section));
+
+    sections.forEach((section) => {
+      if (!section.classList.contains("visible")) {
+        sectionObserver.observe(section);
+      }
+    });
   }
 
   /* ---------- Header scroll + back to top ---------- */
@@ -531,7 +561,11 @@
     const heroParticles = document.querySelector(".hero-particles");
     if (!heroParticles) return;
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const count = reduceMotion ? 0 : 40;
+    if (reduceMotion) return;
+
+    const isNarrow = window.matchMedia("(max-width: 768px)").matches;
+    const count = isNarrow ? 12 : 24;
+
     for (let i = 0; i < count; i++) {
       const particle = document.createElement("div");
       particle.className = "particle";
@@ -542,40 +576,52 @@
     }
   }
 
+  function scheduleParticles() {
+    const run = () => createParticles();
+    if ("requestIdleCallback" in window) {
+      window.requestIdleCallback(run, { timeout: 1500 });
+    } else {
+      window.setTimeout(run, 300);
+    }
+  }
+
   /* ---------- Loading screen (short) ---------- */
 
-  function initLoading() {
+  function hideLoadingOverlay() {
     const loadingOverlay = document.getElementById("loading");
     const loadingText = document.querySelector(".loading-text");
-    if (!loadingOverlay) return;
+    if (!loadingOverlay || loadingOverlay.classList.contains("hidden")) return;
 
     if (loadingText) {
       loadingText.textContent = "Ready to Launch!";
     }
 
+    loadingOverlay.style.pointerEvents = "none";
+    loadingOverlay.classList.add("hidden");
+
+    let removed = false;
+    const onEnd = (e) => {
+      if (e.target === loadingOverlay && !removed) {
+        removed = true;
+        loadingOverlay.remove();
+        loadingOverlay.removeEventListener("transitionend", onEnd);
+      }
+    };
+    loadingOverlay.addEventListener("transitionend", onEnd);
     window.setTimeout(() => {
-      loadingOverlay.style.pointerEvents = "none";
-      loadingOverlay.classList.add("hidden");
-      let removed = false;
-      const onEnd = (e) => {
-        if (e.target === loadingOverlay && !removed) {
-          removed = true;
+      if (!removed) {
+        try {
           loadingOverlay.remove();
-          loadingOverlay.removeEventListener("transitionend", onEnd);
+        } catch (err) {
+          /* ignore */
         }
-      };
-      loadingOverlay.addEventListener("transitionend", onEnd);
-      window.setTimeout(() => {
-        if (!removed) {
-          try {
-            loadingOverlay.remove();
-          } catch (err) {
-            /* ignore */
-          }
-          removed = true;
-        }
-      }, 800);
-    }, 900);
+        removed = true;
+      }
+    }, 500);
+  }
+
+  function initLoading() {
+    window.setTimeout(hideLoadingOverlay, 450);
   }
 
   /* ---------- Boot ---------- */
@@ -586,7 +632,8 @@
     initNav();
     initSectionReveal();
     initScrollUi();
-    createParticles();
+    scheduleParticles();
+    initLoading();
 
     const logo = document.querySelector(".logo");
     if (logo) {
@@ -599,6 +646,4 @@
       });
     }
   });
-
-  window.addEventListener("load", initLoading);
 })();

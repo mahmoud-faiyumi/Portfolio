@@ -760,9 +760,11 @@ main {
 .section {
   padding: var(--section-padding);
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity .8s var(--ease-smooth), transform .8s var(--ease-smooth);
+  transform: translateY(20px);
+  transition: opacity .45s var(--ease-smooth), transform .45s var(--ease-smooth);
   position: relative;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
 }
 
 .section.visible {
@@ -1847,7 +1849,7 @@ main {
   align-items: center;
   justify-content: center;
   z-index: 10000;
-  transition: opacity 1000ms var(--ease-smooth), transform 1000ms var(--ease-smooth), visibility 0s linear 1000ms;
+  transition: opacity 500ms var(--ease-smooth), transform 500ms var(--ease-smooth), visibility 0s linear 500ms;
   will-change: opacity, transform;
   font-family: 'JetBrains Mono', monospace;
   text-align: center;
@@ -1919,7 +1921,7 @@ main {
 
 #loading .spinner,
 #loading .loading-text {
-  transition: opacity 1000ms var(--ease-smooth), transform 1000ms var(--ease-smooth);
+  transition: opacity 500ms var(--ease-smooth), transform 500ms var(--ease-smooth);
 }
 
 #loading.hidden .spinner {
@@ -2076,6 +2078,8 @@ main {
   .about .profile,
   .section {
     transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 
   .about .profile-cta .btn {
