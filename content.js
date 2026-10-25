@@ -233,6 +233,54 @@ window.PORTFOLIO = {
 
   projects: [
     {
+      id: "proj-ar-wordle",
+      title: "Ar-Wordle (ووردل عربي)",
+      image: "assets/ar-wordle.webp",
+      alt: "Ar-Wordle Arabic word puzzle game preview",
+      summary:
+        "Feature-packed daily Arabic word puzzle game with 3 difficulty tiers, hamza normalization mechanics, streak tracking, and global leaderboards.",
+      problem:
+        "Mainstream word games are tailored for English and fail to accommodate Arabic linguistic intricacies — such as diverse hamza forms, taa marbuta nuances, and specialized RTL keyboard layouts.",
+      role: "Designed and built the full gameplay experience: custom Arabic on-screen keyboard, 3D tile flip animations, two-pass letter evaluation engine, dynamic scoring formula, and interactive audio feedback.",
+      result:
+        "Shipped an engaging, daily synchronized web puzzle game featuring three difficulty modes, win streak tracking with freeze protection, spoiler-free emoji share grids, and live rankings at ar-wordle.web.app.",
+      tech: [
+        "Angular",
+        "TypeScript",
+        "Signals",
+        "Firebase",
+        "PWA",
+        "Web Audio API",
+      ],
+      links: [
+        { label: "Live", href: "https://ar-wordle.web.app" },
+      ],
+    },
+    {
+      id: "proj-lajnet-alsanafer",
+      title: "Lajnet Al-Sanafer (منصة سنافر البوليتكنك)",
+      image: "assets/lajnet-alsanafer.webp",
+      alt: "Lajnet Al-Sanafer academic portal and student hub preview",
+      summary:
+        "Comprehensive academic portal & student hub for Polytechnic (FET) engineering students — featuring searchable study materials, computerized placement exams, degree trees, and GPA calculators.",
+      problem:
+        "FET engineering students lacked a centralized, modern Arabic platform for course summaries, interactive practice for university level exams, and clear curriculum trees.",
+      role: "Architected and built the full Angular 22 application end-to-end: reactive Firestore catalog, computerized quiz engine with instant scoring, spotlight quick-search (CMD+K), major curriculum trees, and dark/light theme.",
+      result:
+        "Shipped a high-performance, mobile-first PWA serving thousands of engineering students across 10+ majors with instant course downloads, simulated exams, and offline caching at lajnet-alsanafer.web.app.",
+      tech: [
+        "Angular 22",
+        "TypeScript",
+        "Firebase Firestore",
+        "PWA",
+        "Interactive Quizzes",
+        "RTL UX",
+      ],
+      links: [
+        { label: "Live", href: "https://lajnet-alsanafer.web.app/" },
+      ],
+    },
+    {
       id: "proj-healthmate-angular",
       title: "Health Mate (Angular)",
       image: "assets/HealthMate-Angular.webp",
